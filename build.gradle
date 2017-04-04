@@ -1,0 +1,35 @@
+group 'de.hanbei'
+version '1.0-SNAPSHOT'
+
+buildscript {
+    ext.kotlin_version = '1.1.1'
+
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
+    }
+}
+
+apply plugin: 'java'
+apply plugin: 'kotlin'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'com.typesafe.akka:akka-actor_2.11:2.4.17'
+    compile 'com.typesafe.akka:akka-agent_2.11:2.4.17'
+    compile 'com.typesafe.akka:akka-slf4j_2.11:2.4.17'
+    compile 'com.typesafe.akka:akka-stream_2.11:2.4.17'
+    compile "org.jetbrains.kotlin:kotlin-stdlib-jre8:$kotlin_version"
+
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    testCompile 'com.typesafe.akka:akka-stream-testkit_2.11:2.4.17'
+    testCompile 'com.typesafe.akka:akka-testkit_2.11:2.4.17'
+
+}
